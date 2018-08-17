@@ -22,6 +22,7 @@ class User_Authentication extends CI_Controller
     // Show login page
     public function index()
     {
+        $this->load->view('templates/header');
         $this->load->view('authentication/login');
     }
 
@@ -36,9 +37,9 @@ class User_Authentication extends CI_Controller
     {
 
         // Check validation for user input in SignUp form
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
+        $this->form_validation->set_rules('email_value', 'Email', 'trim|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
         if ($this->form_validation->run() == false) {
             $this->load->view('authentication/registration');
         } else {
@@ -62,13 +63,14 @@ class User_Authentication extends CI_Controller
     public function user_login_process()
     {
 
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
 
         if ($this->form_validation->run() == false) {
             if (isset($this->session->userdata['logged_in'])) {
                 $this->load->view('admin');
             } else {
+                $this->load->view('templates/header');
                 $this->load->view('authentication/login');
             }
         } else {
@@ -94,6 +96,7 @@ class User_Authentication extends CI_Controller
                 $data = array(
                     'error_message' => 'Invalid Username or Password',
                 );
+                $this->load->view('templates/header');
                 $this->load->view('authentication/login', $data);
             }
         }
@@ -109,6 +112,7 @@ class User_Authentication extends CI_Controller
         );
         $this->session->unset_userdata('logged_in', $sess_array);
         $data['message_display'] = 'Successfully Logout';
+        $this->load->view('templates/header');
         $this->load->view('authentication/login', $data);
     }
 
