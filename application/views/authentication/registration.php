@@ -1,53 +1,75 @@
-<html>
-   <?php
-      if (isset($this->session->userdata['logged_in'])) {
-        header("location: http://localhost/admin/user_authentication/user_login_process");
-      }
-      ?>
-   <head>
-      <title>Registration Form</title>
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-   </head>
-   <body>
-      <div id="main">
-         <div id="login">
-            <h2>Registration Form</h2>
-            <hr/>
-            <?php
-               echo "<div class='error_msg'>";
-               echo validation_errors();
-               echo "</div>";
-               echo form_open('user_authentication/new_user_registration');
-               
-               echo form_label('Create Username : ');
-               echo"<br/>";
-               echo form_input('username');
-               echo "<div class='error_msg'>";
-               if (isset($message_display)) {
-                echo $message_display;
-               }
-               echo "</div>";
-               echo"<br/>";
-               echo form_label('Email : ');
-               echo"<br/>";
-               $data = array(
-                'type' => 'email',
-                'name' => 'email_value'
-               );
-               echo form_input($data);
-               echo"<br/>";
-               echo"<br/>";
-               echo form_label('Password : ');
-               echo"<br/>";
-               echo form_password('password');
-               echo"<br/>";
-               echo"<br/>";
-               echo form_submit('submit', 'Sign Up');
-               echo form_close();
-               ?>
-            <a href="<?php echo base_url() ?> ">For Login Click Here</a>
-         </div>
-      </div>
-   </body>
+
+
+<body class="bg-dark">
+
+
+<div class="sufee-login d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="login-content">
+            <div class="login-logo">
+                <a href="index.html">
+                    <img class="align-content" src="<?php echo base_url() ?>images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="login-form">
+                <?php echo form_open('user_authentication/new_user_registration'); ?>
+
+                <?php
+                  echo "<div class='error_msg'>";
+                  echo validation_errors();
+                  echo "</div>";
+                ?>
+
+                <!--error massage -->
+                <?php
+                        echo "<div class='error_msg'>";
+                        if (isset($message_display)) {
+                            echo $message_display;
+                        }
+                        echo validation_errors();
+                        echo "</div>";
+                ?>    
+                <!--close error massage -->
+
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" name="username" class="form-control" placeholder="User Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Agree the terms and policy
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
+                    <div class="social-login-content">
+                        <div class="social-button">
+                            <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Register with facebook</button>
+                            <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
+                        </div>
+                    </div>
+                    <div class="register-link m-t-15 text-center">
+                        <p>Already have account ? <a href="#"> Sign in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/plugins.js"></script>
+<script src="<?php echo base_url() ?>assets/js/main.js"></script>
+
+
+</body>
 </html>

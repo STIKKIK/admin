@@ -38,18 +38,19 @@ class User_Authentication extends CI_Controller
     {
 
         // Check validation for user input in SignUp form
-        $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
-        $this->form_validation->set_rules('email_value', 'Email', 'trim|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
+        $this->form_validation->set_rules('username', 'username', 'trim|xss_clean');
+        $this->form_validation->set_rules('email', 'email', 'trim|xss_clean');
+        $this->form_validation->set_rules('password', 'password', 'trim|xss_clean');
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header');
             $this->load->view('authentication/registration');
         } else {
             $data = array(
                 'user_name' => $this->input->post('username'),
-                'user_email' => $this->input->post('email_value'),
+                'user_email' => $this->input->post('email'),
                 'user_password' => $this->input->post('password'),
-                'is_actived' => 1
+                'is_actived' => 1,
+                'datetime_create' => date('Y-m-d H:i:s')
             );
             $result = $this->login_model->registration_insert($data);
             if ($result == true) {
