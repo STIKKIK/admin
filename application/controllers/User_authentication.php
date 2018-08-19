@@ -29,6 +29,7 @@ class User_Authentication extends CI_Controller
     // Show registration page
     public function user_registration_show()
     {
+        $this->load->view('templates/header');
         $this->load->view('authentication/registration');
     }
 
@@ -41,19 +42,23 @@ class User_Authentication extends CI_Controller
         $this->form_validation->set_rules('email_value', 'Email', 'trim|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
         if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header');
             $this->load->view('authentication/registration');
         } else {
             $data = array(
                 'user_name' => $this->input->post('username'),
                 'user_email' => $this->input->post('email_value'),
                 'user_password' => $this->input->post('password'),
+                'is_actived' => 1
             );
             $result = $this->login_model->registration_insert($data);
             if ($result == true) {
                 $data['message_display'] = 'Registration Successfully !';
+                $this->load->view('templates/header');
                 $this->load->view('authentication/login', $data);
             } else {
                 $data['message_display'] = 'Username already exist!';
+                $this->load->view('templates/header');
                 $this->load->view('authentication/registration', $data);
             }
         }
