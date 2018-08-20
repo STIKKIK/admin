@@ -52,10 +52,8 @@
                     <div class="social-login-content">
                         <div class="social-button">
                             <div class="btn fb-login-button"  data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div> 
-                            <!--
                             <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Register with facebook</button>
                             <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
-                            -->
                         </div>
                     </div>
                     <div class="register-link m-t-15 text-center">
