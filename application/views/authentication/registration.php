@@ -45,18 +45,21 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Agree the terms and policy
+                            <input type="checkbox" required> <a href="https://termsfeed.com/privacy-policy/b508791e5047c11300e0814a1d6b9d1b">Agree the terms and policy</a>
                         </label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
                     <div class="social-login-content">
                         <div class="social-button">
+                            <div class="btn fb-login-button"  data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div> 
+                            <!--
                             <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Register with facebook</button>
                             <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
+                            -->
                         </div>
                     </div>
                     <div class="register-link m-t-15 text-center">
-                        <p>Already have account ? <a href="#"> Sign in</a></p>
+                        <p>Already have account ? <a href="<?php echo base_url() ?>"> Sign in</a></p>
                     </div>
                 </form>
             </div>
@@ -64,12 +67,14 @@
     </div>
 </div>
 
+<div id="status">
+</div>
 
-<script src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/plugins.js"></script>
-<script src="<?php echo base_url() ?>assets/js/main.js"></script>
-
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/main.js"></script>
 
 </body>
 </html>

@@ -44,20 +44,26 @@ class User_Authentication extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header');
             $this->load->view('authentication/registration');
-        } else {
+        }
+        else 
+        {
             $data = array(
                 'user_name' => $this->input->post('username'),
                 'user_email' => $this->input->post('email'),
                 'user_password' => $this->input->post('password'),
-                'is_actived' => 1,
-                'datetime_create' => date('Y-m-d H:i:s')
+                'channel_id' => 1,
+                'datetime_create' => date('Y-m-d H:i:s'),
+                'is_actived' => 1
             );
             $result = $this->login_model->registration_insert($data);
-            if ($result == true) {
+            if ($result == true) 
+            {
                 $data['message_display'] = 'Registration Successfully !';
                 $this->load->view('templates/header');
                 $this->load->view('authentication/login', $data);
-            } else {
+            } 
+            else 
+            {
                 $data['message_display'] = 'Username already exist!';
                 $this->load->view('templates/header');
                 $this->load->view('authentication/registration', $data);
@@ -75,21 +81,27 @@ class User_Authentication extends CI_Controller
         if ($this->form_validation->run() == false) {
             if (isset($this->session->userdata['logged_in'])) {
                 $this->load->view('admin');
-            } else {
+            } 
+            else 
+            {
                 $this->load->view('templates/header');
                 $this->load->view('authentication/login');
             }
-        } else {
+        } 
+        else 
+        {
             $data = array(
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password'),
             );
             $result = $this->login_model->login($data);
-            if ($result == true) {
+            if ($result == true) 
+            {
 
                 $username = $this->input->post('username');
                 $result = $this->login_model->read_user_information($username);
-                if ($result != false) {
+                if ($result != false) 
+                {
                     $session_data = array(
                         'username' => $result[0]->user_name,
                         'email' => $result[0]->user_email,
@@ -98,7 +110,9 @@ class User_Authentication extends CI_Controller
                     $this->session->set_userdata('logged_in', $session_data);
                     $this->load->view('admin');
                 }
-            } else {
+            } 
+            else 
+            {
                 $data = array(
                     'error_message' => 'Invalid Username or Password',
                 );
@@ -120,6 +134,67 @@ class User_Authentication extends CI_Controller
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('templates/header');
         $this->load->view('authentication/login', $data);
+    }
+
+    public function new_user_registration_facebook()
+    {
+        // print data
+        //print_r($objectdata = json_decode($this->input->post('data'))); exit;
+
+        $objectdata = json_decode($this->input->post('data'));
+        $data = array(
+            'user_name' => $objectdata -> name,
+            'user_email' => $objectdata -> email,
+            'channel_id' => 2,
+            'datetime_create' => date('Y-m-d H:i:s'),
+            'is_actived' => 1
+        );
+        $result = $this->login_model->registration_insert($data);
+        if ($result == true) 
+        {
+            // write log insert new user
+        } 
+        else 
+        {
+            // write log alrady user
+        }
+    }
+
+    // Check for user login process facebook
+    public function user_login_process_facebook()
+    {
+
+        
+        $data = array(
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
+        );
+        $result = $this->login_model->login($data);
+        if ($result == true) 
+        {
+
+            $username = $this->input->post('username');
+            $result = $this->login_model->read_user_information($username);
+            if ($result != false) 
+            {
+                $session_data = array(
+                    'username' => $result[0]->user_name,
+                    'email' => $result[0]->user_email,
+                );
+                // Add user data in session
+                $this->session->set_userdata('logged_in', $session_data);
+                $this->load->view('admin');
+            }
+        } 
+        else 
+        {
+            $data = array(
+                'error_message' => 'Invalid Username or Password',
+            );
+            $this->load->view('templates/header');
+            $this->load->view('authentication/login', $data);
+        }
+        
     }
 
 }

@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -9,7 +9,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      callAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -64,11 +64,30 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
+  function callAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,name,email', function(response) {
+      sentdata(response);
       console.log('Successful login for: ' + response.email);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+
+  // post data to function php
+  function sentdata(response) {
+    // get baseUrl
+    var getUrl = window.location
+    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+    jQuery.ajax({
+        type: 'POST',
+        dataType: 'TEXT',
+        url: baseUrl + '/user_authentication/new_user_registration_facebook',
+        data: {'data' : JSON.stringify(response)},  // fix: need to append your data to the call
+        success: function (data) {
+          alert(data);
+        }
+    }); 
+  }
+})

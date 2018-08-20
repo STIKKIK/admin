@@ -66,12 +66,14 @@
                     </div>
                     <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" value=" Login ">Sign in</button>
                     <!--<input type="submit" value=" Login " name="submit"/> -->
+                    
                     <div class="social-login-content">
-                        <div class="social-button">
+                      <div class="social-button">
+                            <div class="btn fb-login-button"  data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div>
+                            <!-- 
                             <button type="button" class="btn social facebook btn-flat btn-addon mb-3 " onlogin="checkLoginState();"><i class="ti-facebook"></i>Sign in with facebook</button>
-
-                            <button type="button" class="btn social facebook btn-flat btn-addon mb-3 fb-login-button"  data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true" onlogin="checkLoginState();"></button>
                             <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Sign in with twitter</button>
+                            -->
                         </div>
                     </div>
                     <div class="register-link m-t-15 text-center">
@@ -87,14 +89,11 @@
 <div id="status">
 </div>
 
-
-
-<script src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script>
-<script src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/plugins.js"></script>
-<script src="<?php echo base_url() ?>assets/js/main.js"></script>
-
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/main.js"></script>
 
 </body>
 </html>
