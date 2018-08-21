@@ -1,8 +1,4 @@
-
-
 <body class="bg-dark">
-
-
 <div class="sufee-login d-flex align-content-center flex-wrap">
     <div class="container">
         <div class="login-content">
@@ -51,8 +47,8 @@
                     <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
                     <div class="social-login-content">
                         <div class="social-button">
-                            <div class="btn fb-login-button"  data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div> 
-                            <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Register with facebook</button>
+                             <!--<div class="btn fb-login-button"  data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div> --> 
+                            <button type="button" class="btn social facebook btn-flat btn-addon mb-3" onclick="location.href='<?php echo $loginurl ?>'"><i class="ti-facebook"></i>Register with facebook</button>
                             <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i>Register with twitter</button>
                         </div>
                     </div>
@@ -65,11 +61,11 @@
     </div>
 </div>
 
-<div id="status">
-</div>
+<!--<div id="status">
+</div> -->
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/main.js"></script>

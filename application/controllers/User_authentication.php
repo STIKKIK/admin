@@ -87,8 +87,15 @@ class User_Authentication extends CI_Controller
     // Show registration page
     public function user_registration_show()
     {
+        // load library facebook
+        $fb = $this->facebook_library->load_facebook();
+        // get Redirect Login Helper
+        $helper = $this->facebook_library->get_redirect_login_helper($fb);
+        // get login url
+        $data['loginurl'] = $this->facebook_library->get_login_url($helper);
+
         $this->load->view('templates/header');
-        $this->load->view('authentication/registration');
+        $this->load->view('authentication/registration', $data);
     }
 
     // Validate and store registration data in database
