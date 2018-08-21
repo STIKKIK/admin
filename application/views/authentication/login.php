@@ -1,8 +1,9 @@
 <body class="bg-dark">
     <?php
+        // session user login  
         if (isset($this->session->userdata['logged_in'])) {
-        
-            header("location: http://localhost/admin/user_authentication/user_login_process");
+            //header('location: http://localhost/admin/user_authentication/user_login_process');
+            redirect('http://localhost/admin/user_authentication/user_login_process');
         }
     ?>
 <div class="sufee-login d-flex align-content-center flex-wrap">
@@ -19,11 +20,20 @@
 
                     <!--error massage -->
                     <?php
-                        echo "<div class='error_msg'>";
+                        /*echo "<div class='error_msg'>";
                         if (isset($error_message)) {
                             echo $error_message;
                         }
                         echo validation_errors();
+                        echo "</div>";*/
+                        echo "<div class='sufee-alert alert with-close alert-danger alert-dismissible fade show'>";
+                                if (isset($error_message)) {
+                                    echo $error_message;
+                                }
+                                echo validation_errors();
+                            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                                echo "<span aria-hidden='true'>&times;</span>";
+                            echo "</button>";
                         echo "</div>";
                     ?>    
                     <!--close error massage -->
@@ -31,15 +41,27 @@
                     <!--display massage -->
                     <?php
                         if (isset($logout_message)) {
-                            echo "<div class='message'>";
+                            /*echo "<div class='message'>";
                             echo $logout_message;
+                            echo "</div>";*/
+                            echo "<div class='sufee-alert alert with-close alert-success alert-dismissible fade show'>";
+                                echo $logout_message;
+                                echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                                    echo "<span aria-hidden='true'>&times;</span>";
+                                echo "</button>";
                             echo "</div>";
                         }
                     ?>
                     <?php
                         if (isset($message_display)) {
-                            echo "<div class='message'>";
+                            /*echo "<div class='message'>";
                             echo $message_display;
+                            echo "</div>";*/
+                            echo "<div class='sufee-alert alert with-close alert-success alert-dismissible fade show'>";
+                                echo $message_display;
+                                echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                                    echo "<span aria-hidden='true'>&times;</span>";
+                                echo "</button>";
                             echo "</div>";
                         }
                     ?>

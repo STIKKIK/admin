@@ -56,11 +56,11 @@ class User_Authentication extends CI_Controller
                 $this->load->view('authentication/login', $data);
             }
         } else {
-            $data = array(
+            $data_login = array(
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password'),
             );
-            $result = $this->login_model->login($data);
+            $result = $this->login_model->login($data_login);
             if ($result == true) {
 
                 $username = $this->input->post('username');
@@ -75,9 +75,11 @@ class User_Authentication extends CI_Controller
                     $this->load->view('admin');
                 }
             } else {
-                $data = array(
+                /* $data = array(
                     'error_message' => 'Invalid Username or Password',
                 );
+                */
+                $data['error_message'] = 'Invalid Username or Password';
                 $this->load->view('templates/header');
                 $this->load->view('authentication/login', $data);
             }
