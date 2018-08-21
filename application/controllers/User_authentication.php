@@ -28,9 +28,8 @@ class User_Authentication extends CI_Controller
         $fb = $this->facebook_library->load_facebook();
         // get Redirect Login Helper
         $helper = $this->facebook_library->get_redirect_login_helper($fb);
-
-        $permissions = ['email']; // Optional permissions
-        $data['loginurl'] = $helper->getLoginUrl(base_url() . 'user_authentication/facebook_callback', $permissions);
+        // get login url
+        $data['loginurl'] = $this->facebook_library->get_login_url($helper);
 
         $this->load->view('templates/header');
         $this->load->view('authentication/login', $data);
@@ -43,9 +42,8 @@ class User_Authentication extends CI_Controller
         $fb = $this->facebook_library->load_facebook();
         // get Redirect Login Helper
         $helper = $this->facebook_library->get_redirect_login_helper($fb);
-
-        $permissions = ['email']; // Optional permissions
-        $data['loginurl'] = $helper->getLoginUrl(base_url() . 'user_authentication/facebook_callback', $permissions);
+        // get login url
+        $data['loginurl'] = $this->facebook_library->get_login_url($helper);
 
         $this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
@@ -135,13 +133,8 @@ class User_Authentication extends CI_Controller
         $accessToken = $this->facebook_library->get_access_token($fb, $helper);
         // get user login
         $user_login = $this->facebook_library->get_user_login($fb, $accessToken);
-
         // save user facebook
         $this->save_user_facebook($user_login);
-
-        // User is logged in with a long-lived access token.
-        // You can redirect them to a members-only page.
-        //header('Location: https://example.com/members.php');
     }
 
     public function save_user_facebook($user_login)
@@ -182,9 +175,8 @@ class User_Authentication extends CI_Controller
         $fb = $this->facebook_library->load_facebook();
         // get Redirect Login Helper
         $helper = $this->facebook_library->get_redirect_login_helper($fb);
-
-        $permissions = ['email']; // Optional permissions
-        $data['loginurl'] = $helper->getLoginUrl(base_url() . 'user_authentication/facebook_callback', $permissions);
+        // get login url
+        $data['loginurl'] = $this->facebook_library->get_login_url($helper);
 
         // Removing session data
         $sess_array = array(

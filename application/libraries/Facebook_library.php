@@ -22,6 +22,14 @@ class Facebook_library
         return $fb;
     }
 
+    public function get_login_url($helper)
+    {
+        $permissions = ['email']; // Optional permissions
+        $loginurl = $helper->getLoginUrl(base_url() . 'user_authentication/facebook_callback', $permissions);
+
+        return $loginurl;
+    }
+
     public function get_redirect_login_helper($fb)
     {
         $helper = $fb->getRedirectLoginHelper();
@@ -90,6 +98,9 @@ class Facebook_library
         }
 
         $_SESSION['fb_access_token'] = (string) $accessToken;
+        // User is logged in with a long-lived access token.
+        // You can redirect them to a members-only page.
+        //header('Location: https://example.com/members.php');
 
         return $accessToken;
     }
@@ -99,7 +110,7 @@ class Facebook_library
         try {
             // Get the \Facebook\GraphNodes\GraphUser object for the current user.
             // If you provided a 'default_access_token', the '{access-token}' is optional.
-            $response = $fb->get('/me?fields=name,email,location,gender,birthday,hometown', $accessToken->getValue());
+            $response = $fb->get('/me?fields=name,email', $accessToken->getValue());
         } catch (\Facebook\Exceptions\FacebookResponseException $e) {
             echo $e->getMessage();
         } catch (\Facebook\Exceptions\FacebookSDKException $e) {
