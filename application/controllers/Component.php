@@ -1,7 +1,5 @@
 <?php
-//defined('BASEPATH') OR exit('No direct script access allowed');
-//session_start(); //we need to start session in order to access it through CI
-
+defined('BASEPATH') or exit('No direct script access allowed');
 class Component extends CI_Controller
 {
     public function __construct()
@@ -16,56 +14,56 @@ class Component extends CI_Controller
 
     public function buttons()
     {
-        check_session('component/badges');
+        display('components/badges');
     }
 
     public function badges()
     {
-        check_session('component/buttons');
+        display('components/buttons');
     }
 
     public function tabs()
     {
-        check_session('component/tabs');
+        display('components/tabs');
     }
 
     public function social_buttons()
     {
-        check_session('component/social_buttons');
+        display('components/social_buttons');
     }
 
     public function cards()
     {
-        check_session('component/cards');
+        display('components/cards');
     }
 
     public function alerts()
     {
-        check_session('component/alerts');
+        display('components/alerts');
     }
 
     public function progress_bars()
     {
-        check_session('component/progress_bars');
+        display('components/progress_bars');
     }
 
     public function modals()
     {
-        check_session('component/modals');
+        display('components/modals');
     }
 
     public function switches()
     {
-        check_session('component/switches');
+        display('components/switches');
     }
 
     public function grids()
     {
-        check_session('component/grids');
+        display('components/grids');
     }
 
     public function typography()
     {
-        check_session('component/typography');
+        display('components/typography');
     }
 }

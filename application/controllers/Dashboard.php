@@ -1,7 +1,5 @@
 <?php
-//defined('BASEPATH') OR exit('No direct script access allowed');
-//session_start(); //we need to start session in order to access it through CI
-
+defined('BASEPATH') or exit('No direct script access allowed');
 class Dashboard extends CI_Controller
 {
     public function __construct()
