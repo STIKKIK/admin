@@ -1,7 +1,7 @@
 <body class="bg-dark">
     <?php
         // session user login  
-        if (isset($this->session->userdata['logged_in'])) {
+        if (isset($this->session->userdata['logged_in_admin'])) {
             //header('location: https://localhost/admin/user_authentication/user_login_process');
             redirect(base_url('user_authentication/user_login_process'));
         }

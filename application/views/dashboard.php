@@ -1,8 +1,8 @@
 
    <?php
-      if (isset($this->session->userdata['logged_in_login'])) {
-        $username = ($this->session->userdata['logged_in_login']['username_admin']);
-        $email = ($this->session->userdata['logged_in_login']['email_admin']);
+      if (isset($this->session->userdata['logged_in_admin'])) {
+        $username = ($this->session->userdata['logged_in_admin']['username_admin']);
+        $email = ($this->session->userdata['logged_in_admin']['email_admin']);
       } else {
         header("location: login");
       }
@@ -10,15 +10,15 @@
    <!--<body>
       <div id="profile">
          <?php
-            echo "Hello <b id='welcome'><i>" . $username . "</i> !</b>";
+            echo "Hello <b id='welcome'><i>" . $username_admin . "</i> !</b>";
             echo "<br/>";
             echo "<br/>";
             echo "Welcome to Admin Page";
             echo "<br/>";
             echo "<br/>";
-            echo "Your Username is " . $username;
+            echo "Your Username is " . $username_admin;
             echo "<br/>";
-            echo "Your Email is " . $email;
+            echo "Your Email is " . $email_admin;
             echo "<br/>";
             ?>
          <b id="logout"><a href="logout">Logout</a></b>

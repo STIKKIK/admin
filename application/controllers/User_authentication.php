@@ -49,7 +49,7 @@ class User_Authentication extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
 
         if ($this->form_validation->run() == false) {
-            if (isset($this->session->userdata['logged_in_login'])) {
+            if (isset($this->session->userdata['logged_in_admin'])) {
                 $this->load->view('templates/header');
                 $this->load->view('templates/menu');
                 $this->load->view('dashboard');
@@ -73,7 +73,7 @@ class User_Authentication extends CI_Controller
                         'email_admin' => $result[0]->user_email,
                     );
                     // Add user data in session
-                    $this->session->set_userdata('logged_in_login', $session_data_login);
+                    $this->session->set_userdata('logged_in_admin', $session_data_login);
                     $this->load->view('templates/header');
                     $this->load->view('templates/menu');
                     $this->load->view('dashboard');
@@ -175,7 +175,7 @@ class User_Authentication extends CI_Controller
                 'email_admin' => $result[0]->user_email,
             );
             // Add user data in session
-            $this->session->set_userdata('logged_in_login', $session_data_login);
+            $this->session->set_userdata('logged_in_admin', $session_data_login);
             // redirect because facebook api limit token one time
             redirect(base_url('user_authentication/user_login_process'), 'refresh');
         }
@@ -195,7 +195,7 @@ class User_Authentication extends CI_Controller
         $sess_array = array(
             'username' => '',
         );
-        $this->session->unset_userdata('logged_in_login', $sess_array);
+        $this->session->unset_userdata('logged_in_admin', $sess_array);
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('templates/header');
         $this->load->view('authentication/login', $data);
@@ -242,7 +242,7 @@ class User_Authentication extends CI_Controller
                     'email_admin' => $result[0]->user_email,
                 );
                 // Add user data in session
-                $this->session->set_userdata('logged_in_login', $session_data_login);
+                $this->session->set_userdata('logged_in_admin', $session_data_login);
                 $this->load->view('dashboard');
             }
         } else {

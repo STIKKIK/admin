@@ -20,13 +20,13 @@ class Dashboard extends CI_Controller
     public function index()
     {
         // session logged
-        if (isset($this->session->userdata['logged_in'])) {
+        if (isset($this->session->userdata['logged_in_admin'])) {
             $this->load->view('templates/header');
             $this->load->view('templates/menu');
             $this->load->view('dashboard');
         } else {
             // redirect to login page
-            redirect(base_url(), 'refresh');
+            redirect(base_url());
         }
     }
 }
