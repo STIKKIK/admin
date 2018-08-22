@@ -2,8 +2,8 @@
     <?php
         // session user login  
         if (isset($this->session->userdata['logged_in'])) {
-            //header('location: http://localhost/admin/user_authentication/user_login_process');
-            redirect('http://localhost/admin/user_authentication/user_login_process');
+            //header('location: https://localhost/admin/user_authentication/user_login_process');
+            redirect(base_url('user_authentication/user_login_process'));
         }
     ?>
 <div class="sufee-login d-flex align-content-center flex-wrap">
@@ -26,15 +26,17 @@
                         }
                         echo validation_errors();
                         echo "</div>";*/
-                        echo "<div class='sufee-alert alert with-close alert-danger alert-dismissible fade show'>";
+                        
                                 if (isset($error_message)) {
-                                    echo $error_message;
+                                    echo "<div class='sufee-alert alert with-close alert-danger alert-dismissible fade show'>";
+                                        echo $error_message;
+                                        echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                                            echo "<span aria-hidden='true'>&times;</span>";
+                                        echo "</button>";
+                                    echo "</div>";
                                 }
                                 echo validation_errors();
-                            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
-                                echo "<span aria-hidden='true'>&times;</span>";
-                            echo "</button>";
-                        echo "</div>";
+                            
                     ?>    
                     <!--close error massage -->
                     
@@ -109,11 +111,11 @@
 <!--<div id="status">
 </div> -->
 
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/vendor/jquery-2.1.4.min.js') ?>"></script>
 <!--<script type="text/javascript" src="<?php echo base_url() ?>assets/js/facebooklogin.js"></script> -->
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/plugins.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/main.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/plugins.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/main.js') ?>"></script>
 
 </body>
 </html>

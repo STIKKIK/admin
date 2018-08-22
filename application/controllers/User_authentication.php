@@ -49,8 +49,10 @@ class User_Authentication extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
 
         if ($this->form_validation->run() == false) {
-            if (isset($this->session->userdata['logged_in'])) {
-                $this->load->view('admin');
+            if (isset($this->session->userdata['logged_in_login'])) {
+                $this->load->view('templates/header');
+                $this->load->view('templates/menu');
+                $this->load->view('dashboard');
             } else {
                 $this->load->view('templates/header');
                 $this->load->view('authentication/login', $data);
@@ -66,13 +68,15 @@ class User_Authentication extends CI_Controller
                 $username = $this->input->post('username');
                 $result = $this->login_model->read_user_information($username);
                 if ($result != false) {
-                    $session_data = array(
-                        'username' => $result[0]->user_name,
-                        'email' => $result[0]->user_email,
+                    $session_data_login = array(
+                        'username_admin' => $result[0]->user_name,
+                        'email_admin' => $result[0]->user_email,
                     );
                     // Add user data in session
-                    $this->session->set_userdata('logged_in', $session_data);
-                    $this->load->view('admin');
+                    $this->session->set_userdata('logged_in_login', $session_data_login);
+                    $this->load->view('templates/header');
+                    $this->load->view('templates/menu');
+                    $this->load->view('dashboard');
                 }
             } else {
                 /* $data = array(
@@ -166,12 +170,12 @@ class User_Authentication extends CI_Controller
         // set value session
         $result = $this->login_model->read_user_information($data_user_facebook['user_name']);
         if ($result != false) {
-            $session_data = array(
-                'username' => $result[0]->user_name,
-                'email' => $result[0]->user_email,
+            $session_data_login = array(
+                'username_admin' => $result[0]->user_name,
+                'email_admin' => $result[0]->user_email,
             );
             // Add user data in session
-            $this->session->set_userdata('logged_in', $session_data);
+            $this->session->set_userdata('logged_in_login', $session_data_login);
             // redirect because facebook api limit token one time
             redirect(base_url('user_authentication/user_login_process'), 'refresh');
         }
@@ -191,7 +195,7 @@ class User_Authentication extends CI_Controller
         $sess_array = array(
             'username' => '',
         );
-        $this->session->unset_userdata('logged_in', $sess_array);
+        $this->session->unset_userdata('logged_in_login', $sess_array);
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('templates/header');
         $this->load->view('authentication/login', $data);
@@ -233,13 +237,13 @@ class User_Authentication extends CI_Controller
             $username = $this->input->post('username');
             $result = $this->login_model->read_user_information($username);
             if ($result != false) {
-                $session_data = array(
-                    'username' => $result[0]->user_name,
-                    'email' => $result[0]->user_email,
+                $session_data_login = array(
+                    'username_admin' => $result[0]->user_name,
+                    'email_admin' => $result[0]->user_email,
                 );
                 // Add user data in session
-                $this->session->set_userdata('logged_in', $session_data);
-                $this->load->view('admin');
+                $this->session->set_userdata('logged_in_login', $session_data_login);
+                $this->load->view('dashboard');
             }
         } else {
             $data = array(
