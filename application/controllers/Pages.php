@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Tables extends CI_Controller
+class Pages extends CI_Controller
 {
     public function __construct()
     {
@@ -12,13 +12,18 @@ class Tables extends CI_Controller
         $this->load->library('session');
     }
 
-    public function basic_table()
+    public function login()
     {
-        display('tables/basic_table');
+        display_pages('pages/login');
     }
 
-    public function data_table()
+    public function register()
     {
-        display_custom_header('templates/header_data_table', 'tables/data_table');
+        display_pages('pages/register');
+    }
+    
+    public function forget_password()
+    {
+        display_pages('pages/forget_password');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Tables extends CI_Controller
+class Icons extends CI_Controller
 {
     public function __construct()
     {
@@ -12,13 +12,13 @@ class Tables extends CI_Controller
         $this->load->library('session');
     }
 
-    public function basic_table()
+    public function font_awesome()
     {
-        display('tables/basic_table');
+        display('icons/font_awesome');
     }
 
-    public function data_table()
+    public function themefy_icons()
     {
-        display_custom_header('templates/header_data_table', 'tables/data_table');
+        display('icons/themefy_icons');
     }
 }

@@ -45,7 +45,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                 <ul class="sub-menu children dropdown-menu">
                     <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('forms/basic_form') ?>">Basic Form</a></li>
-                    <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('forms/basic/advanced') ?>">Advanced Form</a></li>
+                    <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('forms/advanced_form') ?>">Advanced Form</a></li>
                 </ul>
             </li>
 
@@ -59,14 +59,14 @@
                 </ul>
             </li>
             <li>
-                <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                <a href="<?php echo base_url('widgets') ?>"> <i class="menu-icon ti-email"></i>Widgets </a>
             </li>
             <li class="menu-item-has-children dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                 <ul class="sub-menu children dropdown-menu">
-                    <li><i class="menu-icon fa fa-line-chart"></i><a href="<?php echo base_url('widgets/chart_js') ?>">Chart JS</a></li>
-                    <li><i class="menu-icon fa fa-area-chart"></i><a href="<?php echo base_url('widgets/flot_chart') ?>">Flot Chart</a></li>
-                    <li><i class="menu-icon fa fa-pie-chart"></i><a href="<?php echo base_url('widgets/peity_chart') ?>">Peity Chart</a></li>
+                    <li><i class="menu-icon fa fa-line-chart"></i><a href="<?php echo base_url('charts/chart_js') ?>">Chart JS</a></li>
+                    <li><i class="menu-icon fa fa-area-chart"></i><a href="<?php echo base_url('charts/flot_chart') ?>">Flot Chart</a></li>
+                    <li><i class="menu-icon fa fa-pie-chart"></i><a href="<?php echo base_url('charts/peity_chart') ?>">Peity Chart</a></li>
                 </ul>
             </li>
 
@@ -82,8 +82,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                 <ul class="sub-menu children dropdown-menu">
                     <li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url('pages/login') ?>">Login</a></li>
-                    <li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url('pages/Register') ?>">Register</a></li>
-                    <li><i class="menu-icon fa fa-paper-plane"></i><a href="<?php echo base_url('pages/forget_pass') ?>">Forget Pass</a></li>
+                    <li><i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url('pages/register') ?>">Register</a></li>
+                    <li><i class="menu-icon fa fa-paper-plane"></i><a href="<?php echo base_url('pages/forget_password') ?>">Forget Pass</a></li>
                 </ul>
             </li>
         </ul>
