@@ -38,6 +38,7 @@
                 <ul class="sub-menu children dropdown-menu">
                     <li><i class="fa fa-table"></i><a href="<?php echo base_url('tables/basic_table') ?>">Basic Table</a></li>
                     <li><i class="fa fa-table"></i><a href="<?php echo base_url('tables/data_table') ?>">Data Table</a></li>
+                    <li><i class="fa fa-table"></i><a href="<?php echo base_url('tables/manage_data_table') ?>">Manage Data Table</a></li>
                 </ul>
             </li>
             <li class="menu-item-has-children dropdown <?php if($this->uri->segment(1)=="forms"){echo "active";}?>">

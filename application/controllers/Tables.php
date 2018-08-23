@@ -21,4 +21,9 @@ class Tables extends CI_Controller
     {
         display_custom_header('templates/header_data_table', 'tables/data_table');
     }
+
+    public function manage_data_table()
+    {
+        display_custom_header('templates/header_data_table', 'tables/manage_data_table');
+    }
 }
