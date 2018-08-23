@@ -14,7 +14,7 @@ class Crud_model extends CI_Model{
       $this->datatables->select('product_code,product_name,product_price,category_id,category_name');
       $this->datatables->from('product');
       $this->datatables->join('categories', 'product_category_id=category_id');
-      $this->datatables->add_column('view', '<a href="javascript:void(0);" class="edit_record btn btn-info" data-code="$1" data-name="$2" data-price="$3" data-category="$4">Edit</a>  <a href="javascript:void(0);" class="delete_record btn btn-danger" data-code="$1">Delete</a>','product_code,product_name,product_price,category_id,category_name');
+      $this->datatables->add_column('view', '<a href="javascript:void(0);" class="edit_record btn btn-warning" data-code="$1" data-name="$2" data-price="$3" data-category="$4">Edit</a>  <a href="javascript:void(0);" class="delete_record btn btn-danger" data-code="$1">Delete</a>','product_code,product_name,product_price,category_id,category_name');
       return $this->datatables->generate();
   }
   //insert data method

@@ -14,12 +14,12 @@ class Components extends CI_Controller
 
     public function buttons()
     {
-        display('components/badges');
+        display('components/buttons');
     }
 
     public function badges()
     {
-        display('components/buttons');
+        display('components/badges');
     }
 
     public function tabs()

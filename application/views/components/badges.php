@@ -12,7 +12,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">UI Elements</a></li>
-                            <li class="active">Buttons</li>
+                            <li class="active">Badges</li>
                         </ol>
                     </div>
                 </div>
@@ -23,334 +23,85 @@
             <div class="animated fadeIn">
                 <div class="row">
 
-                    <div class="buttons">
-
-                        <!-- Left Block -->
-                        <div class="col-md-6">
+                    <div class="badges">
+                        <div class="col-lg-6">
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Badges </strong>
-                                    <small>Use this class
-                                        <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code>
+                                    <strong>Badges</strong>
+                                    <small>Use <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:
                                     </small>
                                 </div>
                                 <div class="card-body">
-                                    <button type="button" class="btn btn-primary">Primary</button>
-                                    <button type="button" class="btn btn-secondary">Secondary</button>
-                                    <button type="button" class="btn btn-success">Success</button>
-                                    <button type="button" class="btn btn-danger">Danger</button>
-                                    <button type="button" class="btn btn-warning">Warning</button>
-                                    <button type="button" class="btn btn-info">Info</button>
-                                    <button type="button" class="btn btn-link">Link</button>
+
+                                    <a href="#">News <span class="badge badge-primary">5</span></a>
+                                    <br>
+                                    <a href="#">Comments <span class="badge badge-warning">10</span></a>
+                                    <br>
+                                    <a href="#">Updates <span class="badge badge-success">2</span></a>
                                 </div>
                             </div><!-- /# card -->
 
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Button tags </strong>
-                                    <small>Use this class
-                                        <code>.btn</code> or <code>&lt;button&gt;</code>
-                                    </small>
+                                    <strong>Labels</strong>
                                 </div>
                                 <div class="card-body">
-                                    <a class="btn btn-primary" href="#" role="button">Link</a>
-                                    <button class="btn btn-danger" type="submit">Button</button>
-                                    <input class="btn btn-info" type="button" value="Input">
-                                    <input class="btn btn-success" type="submit" value="Submit">
-                                    <input class="btn btn-warning" type="reset" value="Reset">
-                                </div>
-                            </div><!-- /# card -->
+                                    <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
+                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
 
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Disabled state </strong>
-                                    <small>Use this class
-                                        <code>disabled="disabled"</code>
-                                    </small>
+                                        <h1>Example heading <span class="badge badge-secondary">New</span></h1>
+                                        <h2>Example heading <span class="badge badge-secondary">New</span></h2>
+                                        <h3>Example heading <span class="badge badge-secondary">New</span></h3>
+                                        <h4>Example heading <span class="badge badge-secondary">New</span></h4>
+                                        <h5>Example heading <span class="badge badge-secondary">New</span></h5>
+                                        <h6>Example heading <span class="badge badge-secondary">New</span></h6>
                                 </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary" disabled>Primary</button>
-                                    <button type="button" class="btn btn-secondary" disabled>Secondary</button>
-                                    <button type="button" class="btn btn-success" disabled>Success</button>
-                                    <button type="button" class="btn btn-danger" disabled>Danger</button>
-                                    <button type="button" class="btn btn-warning" disabled>Warning</button>
-                                    <button type="button" class="btn btn-info" disabled>Info</button>
-                                    <button type="button" class="btn btn-link" disabled>Link</button>
-                                </div>
-                            </div><!-- /# card -->
+                            </div>
 
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Button with Icons </strong>
-                                    <small>Use <code>&lt;i&gt;</code></small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-star"></i>&nbsp; Primary</button>
-                                    <button type="button" class="btn btn-secondary"><i class="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                                    <button type="button" class="btn btn-success"><i class="fa fa-magic"></i>&nbsp; Success</button>
-                                    <button type="button" class="btn btn-warning"><i class="fa fa-map-marker"></i>&nbsp; Warning</button>
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-rss"></i>&nbsp; Danger</button>
-                                    <button type="button" class="btn btn-link"><i class="fa fa-link"></i>&nbsp; Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Small Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-sm</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary btn-sm">Primary</button>
-                                    <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
-                                    <button type="button" class="btn btn-success btn-sm">Success</button>
-                                    <button type="button" class="btn btn-warning btn-sm">Warning</button>
-                                    <button type="button" class="btn btn-danger btn-sm">Danger</button>
-                                    <button type="button" class="btn btn-link btn-sm">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Small Button with Icons </strong>
-                                    <small>Use this class
-                                        <code>.btn-sm</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Primary</button>
-                                    <button type="button" class="btn btn-secondary btn-sm"><i class="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                                    <button type="button" class="btn btn-success btn-sm"><i class="fa fa-magic"></i>&nbsp; Success</button>
-                                    <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-map-marker"></i>&nbsp; Warning</button>
-                                    <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-rss"></i>&nbsp;Danger</button>
-                                    <button type="button" class="btn btn-link btn-sm"><i class="fa fa-link"></i>&nbsp; Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Large Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-lg</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary btn-lg">Primary</button>
-                                    <button type="button" class="btn btn-secondary btn-lg">Secondary</button>
-                                    <button type="button" class="btn btn-success btn-lg">Success</button>
-                                    <button type="button" class="btn btn-warning btn-lg">Warning</button>
-                                    <button type="button" class="btn btn-danger btn-lg">Danger</button>
-                                    <button type="button" class="btn btn-link btn-lg">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Large Active Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-lg .active</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary btn-lg active">Primary</button>
-                                    <button type="button" class="btn btn-secondary btn-lg active">Secondary</button>
-                                    <button type="button" class="btn btn-success btn-lg active">Success</button>
-                                    <button type="button" class="btn btn-warning btn-lg active">Warning</button>
-                                    <button type="button" class="btn btn-danger btn-lg active">Danger</button>
-                                    <button type="button" class="btn btn-link btn-lg active">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Block Level Buttons </strong>
-                                    <small>Use this class
-                                        <code>.btn-block</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                                    <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
-
-                                    <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
-                                    <button type="button" class="btn btn-secondary btn-lg btn-block">Secondary</button>
-                                    <button type="button" class="btn btn-success btn-lg btn-block">Success</button>
-                                    <button type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
-                                    <button type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
-                                    <button type="button" class="btn btn-link btn-lg btn-block">Link</button>
-                                </div>
-                            </div><!-- /# card -->
                         </div>
 
 
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Badges  in Buttons</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted m-b-15">Use the <code>.badge</code> class within <code>&lt;span&gt;</code> elements to create badges:</p>
 
-                        <!-- Right Block -->
-                        <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary m-l-10 m-b-10">Primary <span class="badge badge-light">7</span></button>
+                                    <button type="button" class="btn btn-success m-l-10 m-b-10">Success <span class="badge badge-light">7</span></button>
+                                    <button type="button" class="btn btn-info m-l-10 m-b-10">Info <span class="badge badge-light">7</span></button>
+                                    <button type="button" class="btn btn-warning m-l-10 m-b-10">Warning <span class="badge badge-light">7</span></button>
+                                    <button type="button" class="btn btn-danger m-l-10 m-b-10">Danger <span class="badge badge-light">7</span></button>
+                                </div>
+                            </div>
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Outline Buttons </strong>
-                                    <small>Use this class
-                                        <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code>
-                                    </small>
+                                    <strong>Labels</strong>
                                 </div>
                                 <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary">Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                                    <button type="button" class="btn btn-outline-success">Success</button>
-                                    <button type="button" class="btn btn-outline-danger">Danger</button>
-                                    <button type="button" class="btn btn-outline-warning">Warning</button>
-                                    <button type="button" class="btn btn-outline-info">Info</button>
-                                    <button type="button" class="btn btn-outline-link">Link</button>
-                                </div>
-                            </div><!-- /# card -->
+                                    <p class="text-muted m-b-15">Use the <code>.label</code> class,&nbsp; followed by one of the six contextual classes <code>.label-default</code>, <code>.label-primary</code>, <code>.label-success</code>,
+                                        <code>.label-info</code>, <code>.label-warning</code> or <code>.label-danger</code>, within a <code>&lt;span&gt;</code> element to create a label:</p>
+
+                                        <span class="badge badge-primary">Primary</span>
+                                        <span class="badge badge-secondary">Secondary</span>
+                                        <span class="badge badge-success">Success</span>
+                                        <span class="badge badge-danger">Danger</span>
+                                        <span class="badge badge-warning">Warning</span>
+                                        <span class="badge badge-info">Info</span>
+                                        <span class="badge badge-light">Light</span>
+                                        <span class="badge badge-dark">Dark</span>
 
 
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Button tags </strong>
-                                    <small>Use this class
-                                        <code>.btn</code> or <code>&lt;button&gt;</code>
-                                    </small>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <a class="btn btn-outline-primary" href="#" role="button">Link</a>
-                                    <button class="btn btn-outline-danger" type="submit">Button</button>
-                                    <input class="btn btn-outline-info" type="button" value="Input">
-                                    <input class="btn btn-outline-success" type="submit" value="Submit">
-                                    <input class="btn btn-outline-warning" type="reset" value="Reset">
-                                </div>
-                            </div><!-- /# card -->
 
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Disabled state </strong>
-                                    <small>Use this class
-                                        <code>disabled="disabled"</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary" disabled>Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary" disabled>Secondary</button>
-                                    <button type="button" class="btn btn-outline-success" disabled>Success</button>
-                                    <button type="button" class="btn btn-outline-danger" disabled>Danger</button>
-                                    <button type="button" class="btn btn-outline-warning" disabled>Warning</button>
-                                    <button type="button" class="btn btn-outline-info" disabled>Info</button>
-                                    <button type="button" class="btn btn-outline-link" disabled>Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Button with Icons </strong>
-                                    <small>Use <code>&lt;i&gt;</code></small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary"><i class="fa fa-star"></i>&nbsp; Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary"><i class="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                                    <button type="button" class="btn btn-outline-success"><i class="fa fa-magic"></i>&nbsp; Success</button>
-                                    <button type="button" class="btn btn-outline-warning"><i class="fa fa-map-marker"></i>&nbsp; Warning</button>
-                                    <button type="button" class="btn btn-outline-danger"><i class="fa fa-rss"></i>&nbsp; Danger</button>
-                                    <button type="button" class="btn btn-outline-link"><i class="fa fa-link"></i>&nbsp; Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Small Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-sm</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary btn-sm">Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm">Secondary</button>
-                                    <button type="button" class="btn btn-outline-success btn-sm">Success</button>
-                                    <button type="button" class="btn btn-outline-warning btn-sm">Warning</button>
-                                    <button type="button" class="btn btn-outline-danger btn-sm">Danger</button>
-                                    <button type="button" class="btn btn-outline-link btn-sm">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Small Button with Icons </strong>
-                                    <small>Use this class
-                                        <code>.btn-sm</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm"><i class="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                                    <button type="button" class="btn btn-outline-success btn-sm"><i class="fa fa-magic"></i>&nbsp; Success</button>
-                                    <button type="button" class="btn btn-outline-warning btn-sm"><i class="fa fa-map-marker"></i>&nbsp; Warning</button>
-                                    <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-rss"></i>&nbsp;Danger</button>
-                                    <button type="button" class="btn btn-outline-link btn-sm"><i class="fa fa-link"></i>&nbsp; Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Large Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-lg</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary btn-lg">Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-lg">Secondary</button>
-                                    <button type="button" class="btn btn-outline-success btn-lg">Success</button>
-                                    <button type="button" class="btn btn-outline-warning btn-lg">Warning</button>
-                                    <button type="button" class="btn btn-outline-danger btn-lg">Danger</button>
-                                    <button type="button" class="btn btn-outline-link btn-lg">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Large Active Button </strong>
-                                    <small>Use this class
-                                        <code>.btn-lg .active</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary btn-lg active">Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-lg active">Secondary</button>
-                                    <button type="button" class="btn btn-outline-success btn-lg active">Success</button>
-                                    <button type="button" class="btn btn-outline-warning btn-lg active">Warning</button>
-                                    <button type="button" class="btn btn-outline-danger btn-lg active">Danger</button>
-                                    <button type="button" class="btn btn-outline-link btn-lg active">Link</button>
-                                </div>
-                            </div><!-- /# card -->
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <strong>Block Level Buttons </strong>
-                                    <small>Use this class
-                                        <code>.btn-block</code>
-                                    </small>
-                                </div>
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">Block level button</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block">Block level button</button>
-
-                                    <button type="button" class="btn btn-outline-primary btn-lg btn-block">Primary</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block">Secondary</button>
-                                    <button type="button" class="btn btn-outline-success btn-lg btn-block">Success</button>
-                                    <button type="button" class="btn btn-outline-warning btn-lg btn-block">Warning</button>
-                                    <button type="button" class="btn btn-outline-danger btn-lg btn-block">Danger</button>
-                                    <button type="button" class="btn btn-outline-link btn-lg btn-block">Link</button>
-                                </div>
-                            </div><!-- /# card -->
                         </div>
-                    </div> <!-- .buttons -->
+                    </div> <!-- .badges -->
 
                 </div><!-- .row -->
             </div><!-- .animated -->
