@@ -30,7 +30,7 @@
                                 <strong class="card-title">Data Table</strong>
                             </div>
                             <div class="card-body">  
-                                <button  type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Add New</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Add New</button>
                                 <hr>
                                 <table class="table table-striped" id="mytable">
                                     <thead>
@@ -64,7 +64,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="mediumModalLabel">Add New</h5>
+						<h5 class="modal-title" id="myModalLabel">Add New</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -99,11 +99,13 @@
     <!-- Modal Update Product-->
     <form id="add-row-form" action="<?php echo site_url('tables/update');?>" method="post">
         <div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
- 	        <div class="modal-dialog">
+ 	        <div class="modal-dialog modal-lg">
  	           <div class="modal-content">
  	               <div class="modal-header">
- 	                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
- 	                   <h4 class="modal-title" id="myModalLabel">Update Product</h4>
+						<h5 class="modal-title" id="myModalLabel">Update Product</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
  	               </div>
  	               <div class="modal-body">
  	                    <div class="form-group">
@@ -139,12 +141,14 @@
  	        <div class="modal-dialog">
  	           <div class="modal-content">
  	               <div class="modal-header">
- 	                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
- 	                   <h4 class="modal-title" id="myModalLabel">Delete Product</h4>
+						<h5 class="modal-title" id="myModalLabel">Delete Product</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
  	               </div>
  	               <div class="modal-body">
- 	                       <input type="hidden" name="product_code" class="form-control" required>
-												 <strong>Are you sure to delete this record?</strong>
+						<input type="hidden" name="product_code" class="form-control" required>
+						<strong>Are you sure to delete this record?</strong>
  	               </div>
  	               <div class="modal-footer">
  	                   	<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
@@ -167,7 +171,8 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/datatables.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/dataTables.bootstrap.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/dataTables.buttons.min.js') ?>"></script>
-    <!--<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.bootstrap.min.js') ?>"></script>
+    <!--
+	<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.bootstrap.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/jszip.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/pdfmake.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/vfs_fonts.js') ?>"></script>
@@ -175,6 +180,7 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.print.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.colVis.min.js') ?>"></script>
     <!<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/datatables-init.js') ?>"></script> -->
+	<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.colVis.min.js') ?>"></script>
 
 <script>
 	$(document).ready(function(){
@@ -193,6 +199,8 @@
       	};
 
       	var table = $("#mytable").dataTable({
+		lengthChange: false,
+		buttons: [ 'copy', 'csv', 'excel', 'pdf', 'colvis' ],
 		initComplete: function() {
 			var api = this.api();
 			$('#mytable_filter input')
@@ -221,29 +229,29 @@
 			var page = info.iPage;
 			var length = info.iLength;
 			$('td:eq(0)', row).html();
-		}
+		},
 
       });
 			// end setup datatables
 			// get Edit Records
 			$('#mytable').on('click','.edit_record',function(){
-            var code=$(this).data('code');
-						var name=$(this).data('name');
-						var price=$(this).data('price');
-						var category=$(this).data('category');
-            $('#ModalUpdate').modal('show');
-            $('[name="product_code"]').val(code);
-						$('[name="product_name"]').val(name);
-						$('[name="price"]').val(price);
-						$('[name="category"]').val(category);
-      });
+				var code=$(this).data('code');
+							var name=$(this).data('name');
+							var price=$(this).data('price');
+							var category=$(this).data('category');
+				$('#ModalUpdate').modal('show');
+				$('[name="product_code"]').val(code);
+							$('[name="product_name"]').val(name);
+							$('[name="price"]').val(price);
+							$('[name="category"]').val(category);
+			});
 			// End Edit Records
 			// get delete Records
 			$('#mytable').on('click','.delete_record',function(){
-            var code=$(this).data('code');
-            $('#ModalDelete').modal('show');
-            $('[name="product_code"]').val(code);
-      });
+					var code=$(this).data('code');
+					$('#ModalDelete').modal('show');
+					$('[name="product_code"]').val(code);
+			});
 			// End delete Records
 	});
 </script>
