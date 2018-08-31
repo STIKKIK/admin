@@ -51,3 +51,20 @@ if ( ! function_exists('display_pages'))
         }
     }   
 }
+
+if ( ! function_exists('display_sweet_alert'))
+{
+    function display_sweet_alert($content)
+    {
+        $ci =& get_instance();
+        // session logged
+        if (isset($ci->session->userdata['logged_in_admin'])) {
+            $ci->load->view('templates/header_sweet_alert');
+            $ci->load->view('templates/menu');
+            $ci->load->view($content);
+        } else {
+            // redirect to login page
+            redirect(base_url('user_authentication/user_login_process'));
+        }
+    }     
+}

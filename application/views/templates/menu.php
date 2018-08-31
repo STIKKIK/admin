@@ -31,6 +31,7 @@
                     <li><i class="fa fa-book"></i><a href="<?php echo base_url('components/switches') ?>">Switches</a></li>
                     <li><i class="fa fa-th"></i><a href="<?php echo base_url('components/grids') ?>">Grids</a></li>
                     <li><i class="fa fa-file-word-o"></i><a href="<?php echo base_url('components/typography') ?>">Typography</a></li>
+                    <li><i class="fa fa-exclamation-triangle"></i><a href="<?php echo base_url('components/sweet_alert') ?>">Sweet Alert</a></li>
                 </ul>
             </li>
             <li class="menu-item-has-children dropdown <?php if($this->uri->segment(1)=="tables"){echo "active";}?>">

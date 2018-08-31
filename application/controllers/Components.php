@@ -66,4 +66,8 @@ class Components extends CI_Controller
     {
         display('components/typography');
     }
+    public function sweet_alert()
+    {
+        display_sweet_alert('components/sweet_alert');
+    }
 }
