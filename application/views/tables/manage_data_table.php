@@ -160,27 +160,10 @@
  	 </form>
 
 
-   
-
-	<!-- Right Panel -->
-	<script type="text/javascript" src="<?php echo base_url('assets/js/vendor/jquery-2.1.4.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/main.js') ?>"></script>
-
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/datatables.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/dataTables.bootstrap.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/dataTables.buttons.min.js') ?>"></script>
-    <!--
-	<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.bootstrap.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/jszip.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/pdfmake.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/vfs_fonts.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.html5.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.print.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.colVis.min.js') ?>"></script>
-    <!<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/datatables-init.js') ?>"></script> -->
-	<script type="text/javascript" src="<?php echo base_url('assets/js/lib/data-table/buttons.colVis.min.js') ?>"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
 	$(document).ready(function(){
