@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="form-control-label">Message</label>
-                                <input type="text" id="Message" value="Message" class="form-control">
+                                <input type="text" id="messagecustom" value="Message" class="form-control">
                             </div>
                             <div class="col-md-2">
                                 <label class="form-control-label">Type</label>
@@ -107,7 +107,7 @@
 
             // Message
             $("#butsimple").click(function(){
-                var message = $("#message").val();
+                var message = $("#messagecustom").val();
                 if(message == ""){
                 message  = message;
                 }
@@ -116,7 +116,7 @@
 
             // With message and title
             $("#butalert").click(function(){
-                var message = $("#message").val();
+                var message = $("#messagecustom").val();
                 var title = $("#title").val();
                 if(message == ""){
                 message  = "Your message";
@@ -130,6 +130,7 @@
             // Timer
             $("#buttime").click(function(){
                 var title = $("#title").val();
+                var message = $("#messagecustom").val();
                 message += "(close after 2 seconds)";
                 swal({
                     title: title,
@@ -141,7 +142,7 @@
         
             // type
             $("#butmessage").click(function(){
-                var message = $("#message").val();
+                var message = $("#messagecustom").val();
                 var title = $("#title").val();
                 if(message == ""){
                     message  = "Your message";
@@ -161,8 +162,7 @@
 
             // Show image
             $("#butimage").click(function(){
-                var message = $("#message").val();
-                alert(message);
+                var message = $("#messagecustom").val();
                 var title = $("#title").val();
                 if(message == ""){
                     message  = "Your message";
